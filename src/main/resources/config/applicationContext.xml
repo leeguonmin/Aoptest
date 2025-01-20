@@ -16,6 +16,8 @@
            http://www.springframework.org/schema/aop/spring-aop.xsd">
          
          
+    <!-- Aop AutoProoxy 추가 -->    
+    <aop:aspectj-autoproxy />
     <!--  어노테이션 기반 설정 -->
     <context:annotation-config />
     <context:component-scan base-package="himedia.aoptest">

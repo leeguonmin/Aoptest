@@ -35,7 +35,7 @@
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
 	<dependency>
    	 	<groupId>org.springframework</groupId>
-    	<artifactId>spring-aop</artifactId>
+    	<artifactId>spring-aspects</artifactId>
     	<version>${org.springframework-version}</version>
 	</dependency>
 
