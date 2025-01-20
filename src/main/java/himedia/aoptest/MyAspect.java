@@ -4,6 +4,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -41,6 +42,8 @@ public class MyAspect {
 		System.out.println("-------------------------------3");
 	}
 	
+	// 이걸 켜두면, 가로채서 폭탄을 아이폰으로 바꿔버리기 때문에 주석 
+	/*
 	@Around("execution(* findProduct(String))")
 	public ProductVo around(ProceedingJoinPoint joinPoint) throws Throwable {
 		// 메서드 가로채기, 매개변수 바꾸기 등 부가작업 수행
@@ -50,8 +53,36 @@ public class MyAspect {
 		Object[] args = {"iPhone"};
 		ProductVo vo = (ProductVo) joinPoint.proceed(args);
 		System.out.println("call [around advice]: after");
+		System.out.println("-------------------------------4");
 		
 		return vo;
 	}
+	*/
+	
+	@AfterThrowing(value="execution(* findProduct(String))", throwing="ex")
+	public void afterThrowing(Throwable ex) {
+		System.err.println("call [afterThrowing]");
+		System.err.println("발생한 예외:" + ex.getMessage());
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
