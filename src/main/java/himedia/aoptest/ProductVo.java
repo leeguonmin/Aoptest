@@ -1,12 +1,12 @@
 package himedia.aoptest;
 
-public class productVo {
+public class ProductVo {
 	private String name;
 
 	
 	
 	
-	public productVo(String name) {
+	public ProductVo(String name) {
 		super();
 		this.name = name;
 	}
